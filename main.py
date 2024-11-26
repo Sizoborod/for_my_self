@@ -54,20 +54,18 @@ def zadacha2():
     def oper1():
         '''Как делать простой запрос на SQL
         ГДима'''
-        #Основной командой для получения какой-либо информации из БД является команда SELECT
+        # Основной командой для получения какой-либо информации из БД является команда SELECT
         """SELECT перечень_полей FROM имя_таблицы
-        WHERE условие"""
+            WHERE условие"""
         # Пример запроса
         """SELECT * FROM Films
-    WHERE year = 2010"""
+            WHERE year = 2010"""
         # Запрос для двух БД
         """SELECT title FROM Films 
-                WHERE genre=(
-                        SELECT id FROM genres 
-                            WHERE title = 'фантастика')"""
+                WHERE genre=(SELECT id FROM genres WHERE title = 'фантастика')"""
         # Использование IN
         """SELECT title, duration FROM Films 
-                WHERE duration IN (45, 90)""" # IN строго 45 или 90 минут
+                WHERE duration IN (45, 90)"""  # IN строго 45 или 90 минут
         # BETWEEN диапазон(включая границы)
         """SELECT * FROM Films
     WHERE (year > 2005) AND duration BETWEEN 45 AND 60 """
@@ -76,9 +74,36 @@ def zadacha2():
     WHERE title like 'А_к%'"""
         # % — обозначает любое количество, в том числе нулевое, любых символов
         # _  обозначает один любой символ
+
+        # Оператор DISTINCT - возможность избавиться от повторов
+        """SELECT DISTINCT year FROM Films"""
+
+        # Код
+
+    # Импорт библиотеки
+    import sqlite3
+
+    # Подключение к БД
+    con = sqlite3.connect("films_db.sqlite")
+
+    # Создание курсора
+    cur = con.cursor()
+
+    # Выполнение запроса и получение всех результатов
+    result = cur.execute('''SELECT * FROM films
+                WHERE year = 2010''').fetchall() # fetchall() - возвращает все полученные элементы
+
+    # Вывод результатов на экран
+    for elem in result:
+        print(elem)
+
+    con.close()
+
+
 def zadacha3():
     def oper1():
-        '''Как делать сложный запрос по нескольким таблицам запрос на SQL
-        МАня'''
+
+        """Как делать сложный запрос по нескольким таблицам запрос на SQL
+            МАня'''
+            pass
         pass
-    pass
