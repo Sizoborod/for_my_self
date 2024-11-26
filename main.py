@@ -1,3 +1,5 @@
+import csv
+
 def zadacha1():
     def oper1():
         '''Открыть CSV с помощью списка
