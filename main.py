@@ -5,7 +5,7 @@ def zadacha1():
         '''Открыть CSV с помощью списка
         ВТимур'''
         with open('files/ikea.csv', encoding="utf8") as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=';', quotechar='"')
+            reader = csv.ListReader(csvfile, delimiter=';', quotechar='"')
 
     def oper2():
         '''Открыть CSV с помощью словаря
