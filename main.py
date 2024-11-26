@@ -61,5 +61,5 @@ def zadacha3():
     def oper1():
         '''Как делать сложный запрос по нескольким таблицам запрос на SQL
         МАня'''
-        pass
-    pass
+        request_tables = "SELECT album.Title, artist.Name " \
+                         "FROM album INNER JOIN artist ON artist.ArtistId = album.ArtistId;"
