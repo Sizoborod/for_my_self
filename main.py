@@ -1,11 +1,12 @@
 import csv
 
+
 def zadacha1():
     def oper1():
         '''Открыть CSV с помощью списка
         ВТимур'''
         with open('files/ikea.csv', encoding="utf8") as csvfile:
-            read_file = csv.ListReader(csvfile, delimiter=';', quotechar='"')
+            read_file = csv.ListReader(csvfile, delimiter=';', quotechar='"')  # again
 
     def oper2():
         '''Открыть CSV с помощью словаря
