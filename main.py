@@ -6,7 +6,6 @@ def zadacha1():
         ВТимур'''
         with open('files/ikea.csv', encoding="utf8") as csvfile:
             reader = csv.DictReader(csvfile, delimiter=';', quotechar='"')
-        pass
 
     def oper2():
         '''Открыть CSV с помощью словаря
