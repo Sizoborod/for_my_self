@@ -17,22 +17,12 @@ def zadacha1():
         '''Сохранить CSV с помощью списка
         АЮра'''
 
-        """неправильно создает"""
+        # Набор данных
+        data = [('Name', 'Age'), ('Alice', 25), ('Bob', 22)]
 
-        fields = ['Name', 'Branch', 'Year', 'CGPA']
-
-        rows = [['Nikhil', 'COE', '2', '9.0'],
-                ['Sanchit', 'COE', '2', '9.1'],
-                ['Aditya', 'IT', '2', '9.3'],
-                ['Sagar', 'SE', '1', '9.5'],
-                ['Prateek', 'MCE', '3', '7.8'],
-                ['Sahil', 'EP', '2', '9.1']]
-
-        with open('my.csv', 'w+') as f:
-            write = csv.writer(f, delimiter=',')
-
-            write.writerow(fields)
-            write.writerows(rows)
+        # Непосредственная запись в CSV-файл
+        with open('my.csv', 'w', newline='') as f:
+            csv.writer(f, delimiter=';').writerows(data)
 
     def oper4():
         '''Сохранить CSV с помощью словаря
