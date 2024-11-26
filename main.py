@@ -1,3 +1,6 @@
+import csv
+
+
 def zadacha1():
     def oper1():
         '''Открыть CSV с помощью списка
@@ -12,7 +15,23 @@ def zadacha1():
     def oper3():
         '''Сохранить CSV с помощью списка
         АЮра'''
-        pass
+
+        """неправильно создает"""
+
+        fields = ['Name', 'Branch', 'Year', 'CGPA']
+
+        rows = [['Nikhil', 'COE', '2', '9.0'],
+                ['Sanchit', 'COE', '2', '9.1'],
+                ['Aditya', 'IT', '2', '9.3'],
+                ['Sagar', 'SE', '1', '9.5'],
+                ['Prateek', 'MCE', '3', '7.8'],
+                ['Sahil', 'EP', '2', '9.1']]
+
+        with open('my.csv', 'w+') as f:
+            write = csv.writer(f, delimiter=',')
+
+            write.writerow(fields)
+            write.writerows(rows)
 
     def oper4():
         '''Сохранить CSV с помощью словаря
@@ -49,6 +68,8 @@ def zadacha1():
             for d in data:
                 writer.writerow(d)
 
+    oper3()
+
 
 def zadacha2():
     def oper1():
@@ -58,8 +79,7 @@ def zadacha2():
 
 
 def zadacha3():
-    def oper1():
-        '''Как делать сложный запрос по нескольким таблицам запрос на SQL
-        МАня'''
-        pass
     pass
+
+
+zadacha1()
